@@ -18,8 +18,10 @@ def solution(n, lost, reserve):
         # n=5 lost[1,3] reserve[2,4] 인 경우
         # 아래와같은 순서면 reserve 2가 lost 3을 없애준후
         # lost 1, reserve 4가 남아 최대값이 안 됨
+        
         # front = A+1
         # back = A-1
+
         front = A - 1
         back = A + 1
 
