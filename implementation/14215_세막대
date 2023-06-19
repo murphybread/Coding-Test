@@ -1,0 +1,7 @@
+A,B,C = map(int , input().split())
+M=max(A,B,C)
+
+if A+B+C-M > M:
+    print(A+B+C)
+else:
+    print(A+B+C-M +A+B+C-M-1 )
