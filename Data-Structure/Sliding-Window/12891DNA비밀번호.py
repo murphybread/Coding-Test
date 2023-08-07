@@ -1,42 +1,38 @@
-# 9 8
-# CCTGGATTG
-# 2 0 1 1
+# main point
+# O(N) 고려하기 위해 원소 추가,삭제 시간복잡도 고려
+# counter if문 고려
 
-# 슬라이딩 윈도우 start 0 end= P, 두 값이 한 칸씩 이동, P가 N-1이 될 때까지
-# {A:, T, C, G} 딕셔너리에 입력 값 선언
-# 각 부분 집합마다 딕셔너리 값과 비교, 만약 true라면 count +1
-
-
-# count함수가 시간초과의 원인으로 판단.
-# 처음부터 collection함수로 구하기
 from collections import Counter
-import sys
-input = sys.stdin.readline
-
 
 S, P = map(int, input().split())
 DNA = input().strip()
-DNA_A, DNA_C, DNA_G, DNA_T = map(int,input().split())
-condition= Counter(DNA)
-condition["A"] = DNA_A
-condition["C"] = DNA_C
-condition["G"] = DNA_G
-condition["T"] = DNA_T
+DNA_A, DNA_C, DNA_G, DNA_T = map(int, input().split())
 
-start = 0
-end = P
+condition = Counter({"A": DNA_A, "C": DNA_C, "G": DNA_G, "T": DNA_T})
+
+# 첫 윈도우
+rolling_counter = Counter(DNA[:P])
 count = 0
 
-while end <= S:
+
+# 모든 요소를 비교하여 만약 모든요소 값이 more than 이라면 True 반환
+if rolling_counter >= condition:
+    count += 1
+
+# Slide the window
+for i in range(S-P+1):
+    # 한칸 이동하며 start위치 만큼 값 감소
+    rolling_counter[DNA[i]] -= 1
     
-    partial = Counter(DNA[start:end])
-    
-    diff = condition - partial
-    print(diff)
-    # If the diff Counter has no elements, then partial satisfies the condition
-    if not diff:
+    # end 예외 설정
+    # 한칸 이동하며 end위치 만큼 값 증가
+    if P+i >= S:
+        continue
+    else:
+        rolling_counter[DNA[P+i]] += 1
+
+    # Check the current window
+    if rolling_counter >= condition :
         count += 1
 
-    start += 1
-    end += 1
 print(count)
