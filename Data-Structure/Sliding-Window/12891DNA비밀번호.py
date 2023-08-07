@@ -20,16 +20,14 @@ if rolling_counter >= condition:
     count += 1
 
 # Slide the window
-for i in range(S-P+1):
+for i in range(S-P):
     # 한칸 이동하며 start위치 만큼 값 감소
     rolling_counter[DNA[i]] -= 1
     
     # end 예외 설정
     # 한칸 이동하며 end위치 만큼 값 증가
-    if P+i >= S:
-        continue
-    else:
-        rolling_counter[DNA[P+i]] += 1
+    
+    rolling_counter[DNA[P+i]] += 1
 
     # Check the current window
     if rolling_counter >= condition :
