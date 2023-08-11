@@ -18,6 +18,7 @@ dy = [-1, 1, 0, 0]
 
 
 # direction으로부터 move mapping
+
 for d in direction:
     nx = x + dx[move.index(d)]
     ny = y + dy[move.index(d)]
