@@ -10,6 +10,7 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 """
 
 # N의 크기가큼. 대신 최대값이 10000이하임. O(nlogn)보다 빠른 O(kn)인 기수 정렬(radix sort) 사용
+# 기수 정렬의 경우 최대 값이 작을 때 사용
 import sys
 
 input = sys.stdin.readline
