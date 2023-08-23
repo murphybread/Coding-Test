@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check the number of parameters
+# Check the number of parameters.
 if [ $# -ne 2 ]; then
   echo "Usage: $0 <level> <taken time>"
   echo "Example: $0 silver1 15m"
