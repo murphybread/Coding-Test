@@ -11,7 +11,7 @@ count = 0
 subset = 0
 guild.sort()
 
-for i in range(len(guild)):
+for i in guild:
     subset += 1
 
     if subset >= i:
