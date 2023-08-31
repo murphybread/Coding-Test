@@ -21,6 +21,9 @@ name = list(name)
 name.sort()
 name = "".join(name)
 
-sum = str(sum)
+if sum !=0:
+    print(name+str(sum))
+else:
+    print(name)
 
-print(name + sum)
+
