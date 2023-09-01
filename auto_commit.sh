@@ -1,4 +1,5 @@
 #!/bin/bash
+export LC_ALL=C.UTF-8  # Set locale explicitly
 
 # Check the number of parameters.
 if [ $# -ne 2 ]; then
@@ -33,6 +34,9 @@ filename=$(basename "$changed_files")
 
 # Create a commit message with the filename, level, category, and time
 commit_message="$filename: $level $category $time"
+
+# Debug the commit message
+echo "Commit Message: $commit_message"
 
 # Commit with the constructed message
 git commit -m "$commit_message"

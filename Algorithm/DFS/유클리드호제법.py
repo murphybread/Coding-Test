@@ -7,3 +7,5 @@ def gcd(A,B):
         return B
     else:
         return gcd(B , A%B)
+
+
