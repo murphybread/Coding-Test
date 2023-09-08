@@ -17,8 +17,8 @@ def solution(sequence, k):
     answer = []
     
     start = 0
-    next = 1
-    sub= sequence[0]
+    next = 0
+    sub= 0
     # 부분수열 탐색 중단 조건 index 조건 및 부분 합 조건
     while next < len(sequence):
         sub += sequence[next]
