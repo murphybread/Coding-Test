@@ -32,19 +32,23 @@ def solution(sequence, k):
 
         
         next+=1
+
+    check_len = answer[0][1]-answer[0][0] +1
     
-    check_len = len(answer[0])
     for i in range(len(answer)):
-        if check_len > len(set(answer[i])):
-            check_len = len(set(answer[i]))
-    
-    # 길이 최소값을 구함
+        now_len =  answer[i][1]-answer[i][0] +1
+        if check_len > now_len:
+            check_len = now_len
+
+
     last = []
-    check_index = answer[0][0]
+
     
     for i in range(len(answer)):
-        if len(set(answer[i])) == check_len:
+        now_len =  answer[i][1]-answer[i][0] +1
+        if now_len == check_len:
             last.append(answer[i])
 
     last.sort()
+
     return last[0]
