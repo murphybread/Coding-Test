@@ -15,20 +15,20 @@
 N, M = map(int, input().split())
 rice_cake = list(map(int, input().split()))
 
-# 잘린떡 변수체크, 처음 자르는 위치 및 시작,끝 설정
+# 잘린떡 체크 변수, 처음 자르는 위치 및 시작,끝 설정
 check = 0
 start = 0
 end = max(rice_cake)
 
 
 while start <= end:
-    sum = 0
+    total = 0
     h = (start + end) // 2
 
     for x in rice_cake:
         if x > h:
-            sum += x - h
-    if sum < M:
+            total += x - h
+    if total < M:
         end = h - 1
     # sum >=M 이라는 뜻임으로 일단 해당 위치 체크 및 더 자를 수 있나 start 이동
     else:
