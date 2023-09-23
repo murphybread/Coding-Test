@@ -9,6 +9,8 @@
 """
 
 
+# 서로소 집합의 union함수는 루트노트의 부모를 바꿔줌으로써 집합을 구분지어줍니다
+# 일반적으로 1번과 4번 노드가 연결 될 때 큰 수가 자식노드(1번의 부모는1번, 4번의 부모는 1번)형태로 됩니다
 def union(parent, a, b):
     a = find(parent, a)
     b = find(parent, b)
@@ -19,11 +21,11 @@ def union(parent, a, b):
         parent[a] = b
 
 
+# 압축 경로 기법을 사용하여 부모노드를 바꿉니다.
 def find(parent, x):
     if parent[x] != x:
-        print("before", x)
         parent[x] = find(parent, parent[x])
-        print("after", parent[x])
+
     return parent[x]
 
 
