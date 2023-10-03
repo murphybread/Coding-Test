@@ -13,17 +13,6 @@ for _ in range(m):
     graph[a].append((b, c))
 
 
-# def min_idx():
-#     min_value = INF
-#     idx = 0
-
-#     for i in range(1, n + 1):
-#         if distance[i] < min_value and not visited[i]:
-#             min_value = distance[i]
-#             idx = i
-#     return idx
-
-
 def dijkstra(start):
     q = []
     heapq.heappush(q, (0, start))
