@@ -18,6 +18,7 @@ def solution(n):
 
     left, right = 1, 1
     # 투포인터 적으면 LEFT +1 , 크면 Right-1, 같은면 count +1 하고 left1
+    # main point는 sub_sum을 3가지경우에 대해 업데이트해주기, right의 경우 right업데이트후 값반영, left의 경우 -후 left 업데이트
 
     sub_sum = 1
 
